@@ -6,7 +6,7 @@ class Commondity(models.Model):
     CommodityName = models.CharField('商品名称', max_length=100)
     CommodityCategory = models.CharField('商品类别', max_length=50, blank=True)
     CommodityPrice = models.DecimalField('商品价格', max_digits=11, decimal_places=2)
-    CommondityImage = models.ImageField('商品图片', upload_to='static', default='static/upload/None/no-img.jpg')
+    CommondityImage = models.ImageField('商品图片', upload_to='static', default='static/no-img.jpg')
     CommodityDateTime = models.DateTimeField('登记日期', auto_now_add=True)
     CommodityContent = models.TextField('商品说明', blank=True, null=True)
     CommondityContactMobile = models.CharField('联系电话', max_length=11, blank=True, null=True)
