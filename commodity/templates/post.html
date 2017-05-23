@@ -1,35 +1,42 @@
-#post.html
 {% extends "base.html" %}
 
 {% block content %}
-<div class="posts">
-        <section class="post">
-            <header class="post-header">
-                <h2 class="post-title">{{ post.CommodityName }}</h2>
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <p>&nbsp;</p>
+            </div>
+            <p><a class="btn btn-default" role="button">首页 </a>
+                <a>&nbsp;>&nbsp;</a> <a class="btn btn-default" role="button">{{ post.CommodityCategory }} </a>
+            <table width="700" border="0">
+                <tbody>
+                <tr>
+                    <td width="277" rowspan="4"><img src="../{{ post.CommondityImage.url}}" height="330" width="330"/>
+                    </td>
+                    <td width="339" height="36"><h2>{{ post.CommodityName }}</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="41">¥：<a class="btn btn-primary btn-lg" role="button">{{ post.CommodityPrice }}</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        登记日期：{{ post.CommodityDateTime|date:"Y/m/d" }}
+                    </td>
+                </tr>
+                <tr>
+                    <td height="167"><p>商品介绍：</p>
+            {{ post.CommodityContent }}</td>
+                </tr>
+                <tr>
+                    <td height="51">联系电话：<h4>{{ post.CommondityContactMobile }}</h4></td>
+                </tr>
+                </tbody>
+            </table>
 
-                    <p class="post-meta">
-                        时间:  <a class="post-author" href="#">{{ post.CommodityDateTime|date:"Y /m /d"}}</a>
-                        <a class="post-category post-category-js" href="#">{{ post.CommodityCategory }}</a>
-                    </p>
-            </header>
-                <div class = 'post-description'>
-                  <!-- <img src=" {{ post.CommondityImage}}"/>-->
-                 <img src="http://localhost:8080/pic_folder/timg.jpeg"/>
-                     {{ post.CommondityImage}}
+        </div>
+    </div>
+</div>
 
-                </div>
-                 <div class="post-description">
-                    <p>
-                        {{ post.CommodityPrice }}
-                    </p>
-                </div>
-                <div class="post-description">
-                    <p>
-                        {{ post.CommodityContent }}
-                    </p>
-                </div>
-        </section>
-</div><!-- /.blog-post -->
+
 {% endblock %}
-
-<!--1015869248@qq.com-->
