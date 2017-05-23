@@ -25,6 +25,8 @@
                 </tr>
               </thead>
               <tbody>
+              {% load paginate_tags %} # 首先必须通过load模板标签载入分页标签
+{% paginate post_list 2 %} 把文章列表传给paginate函数，每页分7个，context上下文则自动被传入，无需显示指定
                   {% for post in post_list %}
                 <tr>
                   <td><a href="{% url "detail" id=post.id %}">{{ post.CommodityName }}</a></td>
@@ -37,6 +39,12 @@
               </tbody>
             </table>
           </div>
+
+
+{% include 'pagination.html' %}
+# 这里用到一个 include 技巧，把pagination的模板代码写在单独的pagination.html文件中，这样哪里需要用到哪里就 include 进来就行，提高代码的复用性。
+<!--
+
  <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -78,5 +86,5 @@
             <a href="?page={{ contacts.next_page_number }}">下一页</a>
         {% endif %}
     </span>
-</div>
+</div>-->
 {% endblock %}
