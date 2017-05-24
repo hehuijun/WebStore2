@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
@@ -22,45 +24,43 @@
     <link href="../static/css/justified-nav.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../static/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../static/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../static/css/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="container">
+<div class="container">
 
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-      <div class="masthead">
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead">
         <h3 class="text-muted">最简单的商品管理系统</h3>
         <nav>
-          <ul class="nav nav-justified">
-            <li class="active"><a href="{% url "home" %}">首页</a></li>
-            <li><a href="/admin/commodity/" target="_blank">商品管理</a></li>
-            <li><a href="/admin" target="_blank">后台管理</a></li>
-            <li><a href="/static/readme.pdf" target="_blank">系统帮助</a></li>
-            <li><a href="mailto:he.huijun@gmail.com">技术支持</a></li>
-          </ul>
+            <ul class="nav nav-justified">
+                <li class="active"><a href="{% url " home" %}">首页</a></li>
+                <li><a href="/admin/commodity/" target="_blank">商品管理</a></li>
+                <li><a href="/admin" target="_blank">后台管理</a></li>
+                <li><a href="/static/readme.pdf" target="_blank">系统帮助</a></li>
+                <li><a href="mailto:he.huijun@gmail.com">技术支持</a></li>
+            </ul>
         </nav>
-      </div>
+    </div>
 
 
-      <!-- Example row of columns -->
-      
-      
-      <div class="row">
+    <!-- Example row of columns -->
+
+
+    <div class="row">
         {% block content %}
-            {% endblock %}
-            
-            
-
+        {% endblock %}
 
 
     </div> <!-- /container -->
@@ -69,9 +69,10 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
     <script src="../static/css/ie10-viewport-bug-workaround.js"></script>
-        <!-- Site footer -->
-      <footer class="footer">
+    <!-- Site footer -->
+    <footer class="footer">
         <p>何慧君 © 2017</p>
-      </footer>
+    </footer>
 
-</body></html>
+</body>
+</html>
