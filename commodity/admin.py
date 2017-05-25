@@ -12,5 +12,5 @@ class AdminCommondity(admin.ModelAdmin):
     search_fields = ('CommodityName', 'CommodityCategory',)#从哪些字段中搜索
     list_filter = ('CommodityCategory','CommodityDateTime',)#筛选器
 
-    admin.site.register(Commondity,AdminCommondity)
+admin.site.register(Commondity,AdminCommondity)
 

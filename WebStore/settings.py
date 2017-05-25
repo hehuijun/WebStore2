@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/Users/alexmac/Library/Mobile\ Documents/com\~apple\~CloudDocs/DEV/WebStore2/static/',  # 用不到的时候可以不写这一行
+    '/Users/alexmac/Library/Mobile\ Documents/com\~apple\~CloudDocs/DEV/WebStore2/static/',  # 根据本地文件夹的不同而需要进行修改
 )
 
 
