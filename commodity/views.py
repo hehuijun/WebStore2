@@ -12,6 +12,10 @@ def home(request):
     #return  HttpResponse('Hello World!')
     post_list = Commondity.objects.all()#获取全部对象
     return render(request,'home.html',{'post_list':post_list})
+def index(request):
+    #return  HttpResponse('Hello World!')
+    post_list2 = Commondity.objects.all()#获取全部对象
+    return render(request,'index.html',{'post_list2':post_list2})
 
 def detail(request, id):
     try:

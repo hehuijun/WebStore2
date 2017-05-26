@@ -1,6 +1,5 @@
 <!--home.html-->
 {% extends "base.html" %}
-
 {% block content %}
 <!-- Jumbotron -->
 <div class="jumbotron">
@@ -15,16 +14,8 @@
 </div>
     <div class="table-responsive">
             <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>商品名称</th>
-                  <th>商品类别</th>
-                  <th>商品价格</th>
-                  <th>登记日期</th>
-                  <th>商品图片</th>
-                </tr>
-              </thead>
-              <tbody class="table-hover">
+
+              <tbody>
                   {% for post in post_list %}
                 <tr>
                   <td><a href="{% url "detail" id=post.id %}"> {{ post.CommodityName }}</a></td>
@@ -37,6 +28,27 @@
               </tbody>
             </table>
           </div>
+
+<div>
+  {% for post in post_list2 %}
+    <div style="width:300px" class="pull-left" >
+        <div class="display: block">
+        <img  class="img-responsive" src="../{{ post.CommondityImage.url}}" height="220" width="280"/></div>
+        <div>
+            <div >
+
+               <a class="display: block" href="{% url "detail" id=post.id %}" class="center-block"> {{ post.CommodityName }}</a>
+                </div>
+                 <div class="display: block">
+                     {{ post.CommodityPrice }}
+            </div>
+            </ul>
+
+    </div>
+
+    </div>
+      {% endfor %}
+</div>
 
 
 {% endblock %}
