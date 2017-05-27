@@ -18,8 +18,8 @@ from django.contrib import admin
 from commodity import views #alex：1.8以上新的写法
 urlpatterns = (
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home,name='home'),  # alex：1.8以上新的写法
+    url(r'^$', views.index,name='index'),  # alex：1.8以上新的写法
     url( r'^(?P<id>\d+)/$',views.detail, name='detail'),
-    url(r'^index/$',views.index),
+    url(r'^list/$',views.list),
    # url(r'^test/$',views.test),
 )

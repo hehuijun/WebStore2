@@ -1,4 +1,4 @@
-<!--home.html-->
+<!--index.html-->
 {% extends "base.html" %}
 {% block content %}
 <!-- Jumbotron -->
@@ -12,42 +12,27 @@
 
     <p><a class="btn btn-lg btn-success" href="/static/readme.pdf" role="button" target="_blank">点击阅读开发手册</a></p>
 </div>
-    <div class="table-responsive">
-            <table class="table table-striped">
-
-              <tbody>
-                  {% for post in post_list %}
-                <tr>
-                  <td><a href="{% url "detail" id=post.id %}"> {{ post.CommodityName }}</a></td>
-                  <td>{{ post.CommodityCategory }}</td>
-                  <td>{{ post.CommodityDateTime |date:"Y/m/d"}}</td>
-                  <td>{{ post.CommodityPrice }}</td>
-                  <td><img src="{{ post.CommondityImage.url }}" alt="{{ post.CommodityName }}" height="150" width="150"></td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
 
 <div>
-  {% for post in post_list2 %}
-    <div style="width:400px" class="pull-left" >
+    {% for post in post_index %}
+    <div style="width:290px" class="pull-left">
         <div class="display: block">
-        <img  class="img-responsive" src="../{{ post.CommondityImage.url}}" height="220" width="280"/></div>
+            <a href="{% url 'detail' id=post.id %}">
+            <img class="img-responsive" src="../{{ post.CommondityImage.url}}" alt="{{ post.CommodityName }}" height="220" width="220"/>
+            </a>
+        </div>
         <div>
-            <div >
-
-               <a class="display: block" href="{% url "detail" id=post.id %}" class="center-block"> {{ post.CommodityName }}</a>
-                </div>
-                 <div class="display: block">
-                     {{ post.CommodityPrice }}
+            <div>
+                <a class="display: block" href="{% url 'detail' id=post.id %}" class="center-block"> {{post.CommodityName }}</a>
             </div>
-            </ul>
+            <div class="display: block"><h4>
+                {{ post.CommodityPrice }}</h4>
+            </div>
+
+        </div>
 
     </div>
-
-    </div>
-      {% endfor %}
+    {% endfor %}
 </div>
 
 

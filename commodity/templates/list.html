@@ -1,0 +1,47 @@
+<!--list.html-->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <p></p>
+</div>
+<div>
+    <p></p>
+</div>
+    <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>商品名称</th>
+                  <th>商品类别</th>
+                  <th>商品价格</th>
+                  <th>登记日期</th>
+                  <th>商品图片</th>
+                </tr>
+              </thead>
+              <tbody class="table-hover">
+                  {% for post in post_list %}
+                <tr>
+                  <td><a href="{% url "detail" id=post.id %}"> {{ post.CommodityName }}</a></td>
+                  <td>{{ post.CommodityCategory }}</td>
+                  <td>{{ post.CommodityDateTime |date:"Y/m/d"}}</td>
+                  <td>{{ post.CommodityPrice }}</td>
+                  <td><img src="../{{ post.CommondityImage.url }}" alt="{{ post.CommodityName }}" height="150" width="150"></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+<div float="right">
+<h4>
+  {% for page_number in post_list.paginator.page_range %}
+    {% ifequal page_number  post_list.number %}
+      {{ page_number }}
+    {% else %}
+      <a href="?page={{ page_number }}">{{ page_number }}</a>
+    {% endifequal %}
+  {% endfor %}
+</h4>
+</div>
+{% endblock %}
